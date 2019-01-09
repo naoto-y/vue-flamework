@@ -1,3 +1,5 @@
+require('./components/myh2'),
+
 Vue.component('page', {
     template: '<div class="page"><vueMain /></div',
     data:function(){
