@@ -1,48 +1,48 @@
-require('./components/myh2'),
+Vue.component('vueHeader',{
+    template: '<div class="vheHeader">header</div>',
+})
 
-Vue.component('page', {
-    template: '<div class="page"><vueMain /></div',
-    data:function(){
-        return {
-            routing: null,
-        }
-    },
-    created:function(){
+Vue.component('vueFotter',{
+    template: '<div class="vueFotter">fotter</div>',
+})
+
+Vue.component('page',{
+    template: '<div class="page"><slot /></div>',
+    mounted:function() {
         console.log('page');
+    }
+})
+
+Vue.component('top', {
+    template: '<div>{{title}}</div>',
+    data:function () {
+        return {
+          title: 'top',
+        }
     },
-    methods:{
-        loadRouting:function(){
-            this.routing = 'hoge';
-        }
-    }
 })
 
-Vue.component('vueMain', {
-    template: '<div>main</div>',
-    created:function(){
-        console.log('main');
-    }
+Vue.component('apple', {
+    template: '<div>リンゴのページ</div>',
 })
-
-Vue.component('myh1', {
-    template: '<h1 :id="id" class="myh1">{{data}}</h1>',
-    props: {id:null,data:null},
-    methods: {
-        color: function(text){
-            echo('color: ${text};');
-        }
-    }
-});
 
 const app = new Vue({
     el: '#app',
+    template: '<div class="main"><vueHeader /><component :is="page" /><button @click="setPage()">トップ</button><button @click="setPage(' + "'apple'" + ')">リンゴ</button></page><vueFotter /></div>',
     data: {
+        page: 'top',
     },
-    beforeCreate:function(){
+    created:function() {
     },
-    mounted:function(){
+    mounted:function() {
     },
-    methods:{
-
+    methods: {
+        setPage:function(page){
+            if(!page){
+                this.page = 'top';
+            } else {
+                this.page = page;
+            }
+        }
     }
 })
