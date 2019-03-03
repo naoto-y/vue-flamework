@@ -1,5 +1,5 @@
 Vue.component('vueHeader',{
-    template: '<div class="vheHeader">header</div>',
+    template: '<div class="vheHeader">header<button @click="app.setPage()">トップ</button><button @click="app.setPage(' + "'apple'" + ')">リンゴ</button></div>',
 })
 
 Vue.component('vueFotter',{
@@ -9,7 +9,6 @@ Vue.component('vueFotter',{
 Vue.component('page',{
     template: '<div class="page"><slot /></div>',
     mounted:function() {
-        console.log('page');
     }
 })
 
@@ -28,7 +27,7 @@ Vue.component('apple', {
 
 const app = new Vue({
     el: '#app',
-    template: '<div class="main"><vueHeader /><component :is="page" /><button @click="setPage()">トップ</button><button @click="setPage(' + "'apple'" + ')">リンゴ</button></page><vueFotter /></div>',
+    template: '<div class="main"><vueHeader /><component :is="page" /><vueFotter /></div>',
     data: {
         page: 'top',
     },
