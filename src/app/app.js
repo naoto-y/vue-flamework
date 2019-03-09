@@ -1,13 +1,15 @@
 Vue.component('vueHeader',{
     template: '<div class="vheHeader">header<button @click="app.setPage()">トップ</button><button @click="app.setPage(' + "'apple'" + ')">リンゴ</button></div>',
+    props: [ 'app' ],
 })
 
 Vue.component('vueFotter',{
     template: '<div class="vueFotter">fotter</div>',
 })
 
-Vue.component('page',{
+Vue.component('vuePage',{
     template: '<div class="page"><slot /></div>',
+    props: [ 'app' ],
     mounted:function() {
     }
 })
@@ -22,12 +24,26 @@ Vue.component('top', {
 })
 
 Vue.component('apple', {
-    template: '<div>リンゴのページ</div>',
+    template: '<div class="apple" :app="this">リンゴのページ<button @click="app.setPage(' + "'orange'" +')">オレンジ</button></div>',
+    data:function( ){
+        return {
+            app,
+        }
+    },
+    created:function(){
+        this.app = window.app;
+    }
 })
 
-const app = new Vue({
+Vue.component('orange', {
+    template: '<div>オレンジのページ</div>',
+})
+
+window.app = class {};
+
+window.app = new Vue({
     el: '#app',
-    template: '<div class="main"><vueHeader /><component :is="page" /><vueFotter /></div>',
+    template: '<div class="main"><vueHeader :app="this"/><component :is="page" /><vueFotter /></div>',
     data: {
         page: 'top',
     },
