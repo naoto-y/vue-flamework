@@ -23,16 +23,10 @@ Vue.component('top', {
     },
 })
 
+require('./component/linkBtn/linkBtn');
+
 Vue.component('apple', {
-    template: '<div class="apple" :app="this">リンゴのページ<button @click="app.setPage(' + "'orange'" +')">オレンジ</button></div>',
-    data:function( ){
-        return {
-            app,
-        }
-    },
-    created:function(){
-        this.app = window.app;
-    }
+    template: '<div class="apple" :app="this">リンゴのページ<linkBtn>オレンジ</linkbtn></div>',
 })
 
 Vue.component('orange', {
