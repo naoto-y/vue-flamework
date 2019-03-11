@@ -5,6 +5,13 @@ module.exports = {
   
     // メインのJS
     entry: "./src/app/app.js",
+    module: {
+      loaders: [
+        {
+          test: /\.html$/, loader: 'html-loader',
+        }
+      ]
+    },
     // 出力ファイル
     output: {
       filename: "app.js"

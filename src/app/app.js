@@ -1,37 +1,22 @@
-Vue.component('vueHeader',{
-    template: '<div class="vheHeader">header<button @click="app.setPage()">トップ</button><button @click="app.setPage(' + "'apple'" + ')">リンゴ</button></div>',
-    props: [ 'app' ],
-})
+require('./common/header/header');
 
 Vue.component('vueFotter',{
-    template: '<div class="vueFotter">fotter</div>',
-})
+    template: '<div class="vueFotter">フッター</div>',
+});
 
+//components
 Vue.component('vuePage',{
     template: '<div class="page"><slot /></div>',
     props: [ 'app' ],
     mounted:function() {
     }
-})
-
-Vue.component('top', {
-    template: '<div>{{title}}</div>',
-    data:function () {
-        return {
-          title: 'top',
-        }
-    },
-})
-
+});
 require('./component/linkBtn/linkBtn');
 
-Vue.component('apple', {
-    template: '<div class="apple" :app="this">リンゴのページ<linkBtn>オレンジ</linkbtn></div>',
-})
-
-Vue.component('orange', {
-    template: '<div>オレンジのページ</div>',
-})
+//pages
+require('./pages/top/top');
+require('./pages/apple/apple');
+require('./pages/orange/orange');
 
 window.app = class {};
 
