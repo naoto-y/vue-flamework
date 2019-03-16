@@ -13,23 +13,25 @@ require('./pages/orange/orange');
 
 window.app = class {};
 
-window.app = new Vue({
-    el: '#app',
-    template: require('./app.html'),
-    data: {
-        page: 'top',
-    },
-    created:function() {
-    },
-    mounted:function() {
-    },
-    methods: {
-        setPage:function(page){
-            if(!page){
-                this.page = 'top';
-            } else {
-                this.page = page;
+document.addEventListener('DOMContentLoaded',function(){
+    window.app = new Vue({
+        el: '#app',
+        template: require('./app.html'),
+        data: {
+            page: 'top',
+        },
+        created:function() {
+        },
+        mounted:function() {
+        },
+        methods: {
+            setPage:function(page){
+                if(!page){
+                    this.page = 'top';
+                } else {
+                    this.page = page;
+                }
             }
         }
-    }
+    })
 })
