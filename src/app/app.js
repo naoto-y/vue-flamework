@@ -1,16 +1,9 @@
+//common
 require('./common/header/header');
-
-Vue.component('vueFotter',{
-    template: '<div class="vueFotter">フッター</div>',
-});
+require('./common/footer/footer');
 
 //components
-Vue.component('vuePage',{
-    template: '<div class="page"><slot /></div>',
-    props: [ 'app' ],
-    mounted:function() {
-    }
-});
+require('./component/vuePage');
 require('./component/linkBtn/linkBtn');
 
 //pages
@@ -22,7 +15,7 @@ window.app = class {};
 
 window.app = new Vue({
     el: '#app',
-    template: '<div class="main"><vueHeader :app="this"/><component :is="page" /><vueFotter /></div>',
+    template: require('./app.html'),
     data: {
         page: 'top',
     },
