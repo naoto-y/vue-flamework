@@ -9,6 +9,11 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('dist'))
 });
 
+gulp.task('img', function() {
+    return gulp.src('./src/app/imgs/*')
+    .pipe(gulp.dest('dist/imgs'))
+});
+
 gulp.task('webpack',function() {
     return webpack(webpackConfig)
     .pipe(gulp.dest('dist/app'))
@@ -22,4 +27,4 @@ gulp.task('sass',function(){
         .pipe(gulp.dest('dist/css'))
 });
 
-gulp.task('default', gulp.series( gulp.parallel('copy', 'webpack', 'sass')));
+gulp.task('default', gulp.series( gulp.parallel('copy', 'img', 'webpack', 'sass')));
