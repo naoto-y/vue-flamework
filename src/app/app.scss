@@ -1,9 +1,21 @@
-$width: 50%;
+//common
+@import "src/app/common/header/header";
+
+//component
+@import "src/app/component/accordion/accordion";
+@import "src/app/component/modal/modal";
+@import "src/app/component/pager/pager";
+
+$width: 100%;
 $height: 100%;
 
 body {
+    margin: 10px;
     div {
         width: $width;
         height: $height;
+    }
+    .page {
+        margin-bottom: 10px;
     }
 }

@@ -1,0 +1,18 @@
+.accordion {
+    input[type="checkbox"] { display: none; }
+    .accordionLabel {
+        border: 1px solid rgb(0, 0, 0);
+        padding: 2px;
+        &:hover{
+            background-color: #999;
+        }
+    }
+}
+.myAccordion {
+    &-enter-active, &-leave-active {
+        transition: opacity .5s;
+    }
+    &-enter, &-leave-to {
+        opacity: 0;
+    }
+}

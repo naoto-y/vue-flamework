@@ -1,0 +1,25 @@
+<div class="pager">
+    <div class="pager__header">
+        
+    </div>
+    <table class="pager__table">
+        <tr>
+            <th v-for="key in keys">{{key}}</th>
+        </tr>
+        <tr v-for="ship in currentPageData">
+            <td>{{ship.no}}</td>
+            <td>{{ship.name}}</td>
+            <td>{{ship.type}}</td>
+            <td>{{ship.class}}</td>
+        </tr>
+    </table>
+    <div class="pager__controller">
+        <button @click="toTop()" :disabled="currentPageNum === minPage">先頭へ</button>
+        <button @click="back()" :disabled="currentPageNum === minPage">戻る</button>
+        {{minPage}}
+        {{currentPageNum}}
+        {{maxPage}}
+        <button @click="next()" :disabled="currentPageNum === maxPage">進む</button>
+        <button @click="toEnd()" :disabled="currentPageNum === maxPage">最後へ</button>
+    </div>
+</div>

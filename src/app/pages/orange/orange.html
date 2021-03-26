@@ -1,1 +1,7 @@
-<div>オレンジのページ</div>
+<div class="orange">
+    <div>オレンジのページ</div>
+    <button @click="app.openModal('orangeModal')">オレンジのモーダル</button>
+    <modal modal-name="orangeModal">
+        <p>オレンジモーダルの中身</p>
+    </modal>
+</div>

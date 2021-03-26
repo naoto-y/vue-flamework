@@ -1,6 +1,6 @@
 module.exports = 
     Vue.component('linkBtn',{
-        template: '<button class="linkBtn" @click="app.setPage(page)"><slot /></button>',
+        template: require('./linkBtn.html'),
         props: [ 'page' ],
         data:function( ){
             return {

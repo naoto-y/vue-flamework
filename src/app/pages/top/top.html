@@ -1,18 +1,4 @@
-<div>
+<vuePage>
     <div>{{title}}</div>
-    <div class="accordion">
-        <input type="checkbox" id="accordionCheckBox" v-model="show">
-        <label for="accordionCheckBox">アコーディオン</label>
-        <transition name="myAccordion"  v-if="show"
-                    @before-enter="enter"
-                    @after-leave="leave">
-            <div>
-                <p>アコーディオンの中身</p>
-                <p>アコーディオンの中身</p>
-                <p>アコーディオンの中身</p>
-                <p>アコーディオンの中身</p>
-                <p>アコーディオンの中身</p>
-            </div>
-        </transition>
-        </div>
-</div>
+    <pager :data="pagerData" dataNum="5"></pager>
+</vuePage>
