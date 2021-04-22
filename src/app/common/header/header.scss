@@ -1,3 +1,31 @@
 .vueHeader {
     margin-bottom: 10px;
 }
+
+.globalNav {
+    &__buttons {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        padding: 0;
+        .category {
+            margin: 0 10px;;
+            &:hover > .globalNav__subMenu > li {
+                height: 30px;
+                transition: all 300ms 0s ease;
+            }
+        }
+    }
+    .globalNav__subMenu {
+        li {
+            background-color: #000000;
+            color: #ffffff;
+            font-weight: bold;
+            height: 0;
+            transition: all 100ms 0s ease;
+        }
+    }
+    a {
+        cursor: pointer;
+    }
+}

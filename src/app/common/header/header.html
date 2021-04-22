@@ -1,6 +1,32 @@
-<div class="vueHeader">
+<header class="vueHeader">
     <p>ヘッダー</p>
-    <button @click="app.setPage('top')">トップ</button>
-    <button @click="app.setPage('apple')">リンゴ</button>
-    <button @click="app.setPage('orange')">オレンジ</button>
-</div>
+    <nav class="globalNav">
+        <ul class="globalNav__buttons">
+            <li class="category">
+                <a>リンゴ</a>
+                <div class="globalNav__subMenu">
+                    <li>
+                        <a @click="app.setPage('apple')"> ふじ</a>
+                    </li>
+                    <li>
+                        <a>ジョナゴールド</a>
+                    </li>
+                </div>
+            </li>
+            <li class="category">
+                <a>オレンジ</a>
+                <div class="globalNav__subMenu">
+                    <li>
+                        <a @click="app.setPage('orange')">ネーブル</a>
+                    </li>
+                    <li>
+                        <a>サンフルーツ</a>
+                    </li>
+                </div>
+            </li>
+            <li>
+                <a @click="app.setPage('top')">トップ</a>
+            </li>
+        </ul>
+    </nav>
+</header>

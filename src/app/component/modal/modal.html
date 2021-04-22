@@ -1,7 +1,7 @@
 <div class="modalWrapper" :modal-name="modalName">
-    <div class="modalBg" @click="closeModal(modalName)"></div>
+    <div class="modalBg" @click="app.closeModal(modalName)"></div>
     <div class="modalContent">
-        <button @click="closeModal(modalName)">閉じる</button>
+        <button @click="app.closeModal(modalName)">閉じる</button>
         <slot></slot>
     </div>
 </div>
