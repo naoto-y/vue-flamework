@@ -16,7 +16,7 @@
     "html-loader": "^0.5.5",
     "lodash": "^4.17.21",
     "node-sass": "^7.0.0",
-    "npm-check-updates": "^11.3.0",
+    "npm-check-updates": "^16.3.13",
     "sass-loader": "^7.1.0",
     "webpack": "^4.29.6"
   },
